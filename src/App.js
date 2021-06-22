@@ -3,6 +3,7 @@ import "fontsource-roboto";
 // ROUTER
 import { BrowserRouter } from "react-router-dom";
 import { RouterConfig } from "navigation/RouterConfig";
+import  {ROUTES, RenderRoutes} from "./navigation/Routes";
 // MUI Theme
 // import theme from "styles/muiTheme";
 
@@ -10,7 +11,7 @@ import { RouterConfig } from "navigation/RouterConfig";
 function App() {
     return (
         <BrowserRouter>
-            <RouterConfig />
+            <RenderRoutes routes={ROUTES} />
         </BrowserRouter>
     );
 }

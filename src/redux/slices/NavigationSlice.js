@@ -5,7 +5,7 @@ const navigationSlice = createSlice(
         name:"navigation",
         initialState:{
             drawer : {
-                open : true
+                open : false
             }
         },
         reducers:{

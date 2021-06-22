@@ -11,7 +11,11 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
     },
     appBar: {
-        zIndex: theme.zIndex.drawer + 1
+        zIndex: theme.zIndex.drawer + 1,
+        transition: theme.transitions.create(["margin", "width"], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen
+        })
     }
 }));
 

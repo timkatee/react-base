@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Main from 'pages/Main'
 
-import {HOME} from "navigation/CONSTANTS"
+import {HOME} from "navigation/Routes"
 import {NotFound} from "navigation/NotFound"
 
 export const RouterConfig = () => {

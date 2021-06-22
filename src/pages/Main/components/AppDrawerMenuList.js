@@ -1,10 +1,9 @@
 import {Divider, List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import {toggleAppDrawer} from "../../../redux/slices/NavigationSlice";
 import {useDispatch} from "react-redux";
 const menuList = [
-    {name:'Detected Issues', icon:''}
+    {name:'Detected Issues', icon:<ErrorOutlineIcon/>}
 ]
 export const AppDrawerMenuList = () => {
     const dispatch = useDispatch()
@@ -18,22 +17,22 @@ export const AppDrawerMenuList = () => {
             onKeyDown={toggleDrawer(false)}
         >
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
-                        <ListItemText primary={text}/>
+                {menuList.map((menu, index) => (
+                    <ListItem button key={menu.name}>
+                        <ListItemIcon>{menu.icon}</ListItemIcon>
+                        <ListItemText primary={menu.name}/>
                     </ListItem>
                 ))}
             </List>
-            <Divider/>
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
-                        <ListItemText primary={text}/>
-                    </ListItem>
-                ))}
-            </List>
+            {/*<Divider/>*/}
+            {/*<List>*/}
+            {/*    {['All mail', 'Trash', 'Spam'].map((text, index) => (*/}
+            {/*        <ListItem button key={text}>*/}
+            {/*            <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>*/}
+            {/*            <ListItemText primary={text}/>*/}
+            {/*        </ListItem>*/}
+            {/*    ))}*/}
+            {/*</List>*/}
         </div>
     )
 }
