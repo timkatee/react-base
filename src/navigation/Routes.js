@@ -21,14 +21,12 @@ export const ROUTES = [
 // A special wrapper for <Route> that knows how to
 // handle "sub"-routes by passing them in a `routes`
 // prop to the component it renders.
-export const RouteWithSubRoutes = (route) => {
+export function RouteWithSubRoutes(route){
     return (
         <Route
             path={route.path}
-            render={props => (
-                // pass the sub-routes down to keep nesting
-                <route.component {...props} routes={route.routes} />
-            )}
+            exact={route.exact}
+            render={props => <route.component {...props} routes={route.routes} />}
         />
     );
 }
@@ -37,6 +35,7 @@ export const RouteWithSubRoutes = (route) => {
  * Use this component for any new section of routes (any config object that has a "routes" property
  */
 export function RenderRoutes({ routes }) {
+    // console.log(routes)
     return (
         <Switch>
             {routes.map((route, i) => {

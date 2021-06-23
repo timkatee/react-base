@@ -1,14 +1,16 @@
 import {Divider, List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
+import {Link} from "react-router-dom";
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import {toggleAppDrawer} from "../../../redux/slices/NavigationSlice";
 import {useDispatch} from "react-redux";
+
 const menuList = [
-    {name:'Detected Issues', icon:<ErrorOutlineIcon/>}
+    {name: 'Detected Issues', icon: <ErrorOutlineIcon/>, link: '/detected-issues'}
 ]
 export const AppDrawerMenuList = () => {
     const dispatch = useDispatch()
     const toggleDrawer = (open) => (event) => {
-        dispatch(toggleAppDrawer({open:open, eventType : event.type, eventKey:event.key}))
+        dispatch(toggleAppDrawer({open: open, eventType: event.type, eventKey: event.key}))
     };
     return (
         <div
@@ -18,10 +20,12 @@ export const AppDrawerMenuList = () => {
         >
             <List>
                 {menuList.map((menu, index) => (
-                    <ListItem button key={menu.name}>
-                        <ListItemIcon>{menu.icon}</ListItemIcon>
-                        <ListItemText primary={menu.name}/>
-                    </ListItem>
+                    <Link key={menu.link} to={menu.link}>
+                        <ListItem button key={menu.name}>
+                            <ListItemIcon>{menu.icon}</ListItemIcon>
+                            <ListItemText primary={menu.name}/>
+                        </ListItem>
+                    </Link>
                 ))}
             </List>
             {/*<Divider/>*/}
