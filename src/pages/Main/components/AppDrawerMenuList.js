@@ -5,7 +5,7 @@ import {toggleAppDrawer} from "../../../redux/slices/NavigationSlice";
 import {useDispatch} from "react-redux";
 
 const menuList = [
-    {name: 'Detected Issues', icon: <ErrorOutlineIcon/>, link: '/detected-issues'}
+    {name: 'Detected Issues', icon: <ErrorOutlineIcon/>, link: '/app/detected-issues'}
 ]
 export const AppDrawerMenuList = () => {
     const dispatch = useDispatch()

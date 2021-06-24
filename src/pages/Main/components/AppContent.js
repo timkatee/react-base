@@ -1,8 +1,6 @@
-import React from 'react'
-import {AppTopBar} from './components/AppTopBar'
-import {AppDrawer} from './components/AppDrawer'
-import {makeStyles} from "@material-ui/core/styles"
-import {renderRoutes} from "react-router-config"
+import React from "react";
+import {makeStyles} from "@material-ui/core/styles";
+import {renderRoutes} from "react-router-config";
 //
 const drawerWidth = 240;
 //
@@ -25,15 +23,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 //
-const MainView = ({route}) => {
+export const AppContent = ({route}) =>{
     const classes = useStyles()
     return (
-        <div className={classes.root}>
-            <AppTopBar />
-            <AppDrawer/>
+        <main className={classes.content}>>
+            <div className={classes.drawerHeader} />
             {renderRoutes(route.routes)}
-        </div>
+        </main>
     )
 }
-
-export default MainView
