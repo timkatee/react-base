@@ -1,7 +1,7 @@
-import {Divider, List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
+import {List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
 import {Link} from "react-router-dom";
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
-import {toggleAppDrawer} from "../../../redux/slices/NavigationSlice";
+import {toggleAppDrawer} from "redux/slices/NavigationSlice";
 import {useDispatch} from "react-redux";
 
 const menuList = [

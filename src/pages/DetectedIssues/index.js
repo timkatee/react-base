@@ -1,0 +1,1 @@
+export {DetectedIssuesContainer as default} from './DetectedIssuesContainer'

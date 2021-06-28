@@ -1,5 +1,6 @@
 import Main from 'pages/Main'
 import {AppContent} from "../pages/Main/components/AppContent";
+import DetectedIssues from 'pages/DetectedIssues'
 import {Redirect} from 'react-router-dom'
 //
 export const ROUTES = [
@@ -17,7 +18,7 @@ export const ROUTES = [
                 routes: [
                     {
                         path: "/app/detected-issues",
-                        component: () => <h1>Detected issues</h1>,
+                        component: DetectedIssues,
                     }
                 ]
             },

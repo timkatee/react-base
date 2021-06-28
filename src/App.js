@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "fontsource-roboto";
 // ROUTER
 import { BrowserRouter } from "react-router-dom";
