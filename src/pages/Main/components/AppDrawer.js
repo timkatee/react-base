@@ -1,4 +1,4 @@
-import {Divider, Drawer, List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
+import {Divider, Drawer} from "@material-ui/core";
 import {makeStyles} from '@material-ui/core/styles';
 import {useSelector, useDispatch} from "react-redux";
 import {AppDrawerMenuList} from "./AppDrawerMenuList";
