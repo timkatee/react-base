@@ -12,6 +12,8 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         padding: theme.spacing(3),
         marginLeft: -drawerWidth,
+        width:'100%',
+        minHeight:'600px'
     },
     drawerHeader: {
         display: "flex",

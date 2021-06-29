@@ -1,18 +1,19 @@
 import React from "react";
 import "fontsource-roboto";
 // ROUTER
-import { BrowserRouter } from "react-router-dom";
-import { renderRoutes } from "react-router-config";
+import {BrowserRouter} from "react-router-dom";
+import {renderRoutes} from "react-router-config";
 import {ROUTES} from 'navigation/Routes'
-// MUI Theme
-// import theme from "styles/muiTheme";
-
+import {ThemeProvider} from '@material-ui/styles';
+import {rcpTheme} from "./styles/Themes";
 
 function App() {
     return (
-        <BrowserRouter>
-            {renderRoutes(ROUTES)}
-        </BrowserRouter>
+        <ThemeProvider theme={rcpTheme}>
+            <BrowserRouter>
+                {renderRoutes(ROUTES)}
+            </BrowserRouter>
+        </ThemeProvider>
     );
 }
 

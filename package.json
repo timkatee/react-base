@@ -1,5 +1,5 @@
 {
-  "name": "react_101",
+  "name": "react-base",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -43,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "proxy": "http://10.49.66.98:30008",
+  "devDependencies": {
+    "@material-ui/data-grid": "*"
   }
 }

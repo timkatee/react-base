@@ -1,4 +1,4 @@
-import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query";
+import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
 
 export const meerkatAPI = createApi({
@@ -8,22 +8,10 @@ export const meerkatAPI = createApi({
     }),
     endpoints: (builder) => ({
         getDetectedIssues: builder.query({
-            query: (start) => `detected_issue/read?start=${start}&limit=10`
+            query: (filters) => `detected_issue/read?start=${filters.start}&limit=${filters.limit}`,
+            transformResponse : (response)=> response.map(data=>({...data,id:data.issue_id}))
         })
     })
 });
 
-// export const meerkatAPI = createApi({
-//     reducerPath: 'meerkatAPI',
-//     baseQuery: fetchBaseQuery({
-//         baseUrl: 'https://official-joke-api.appspot.com/jokes/'
-//     }),
-//     endpoints: (builder) => ({
-//         getDetectedIssues: builder.query({
-//             query: (type) => `${type}/random`
-//         })
-//     })
-// });
-
-
-export const {useGetDetectedIssues} = meerkatAPI
+export const { useGetDetectedIssuesQuery } = meerkatAPI;
