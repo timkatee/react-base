@@ -16,7 +16,9 @@ const useStyles = makeStyles((theme) => ({
         transition: theme.transitions.create(["margin", "width"], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen
-        })
+        }),
+        backgroundColor:'#fff',
+        color:'black'
     }
 }));
 
@@ -25,6 +27,9 @@ export  const AppTopBar = () =>{
     const dispatch = useDispatch();
     return <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
+            <IconButton edge="start" color="inherit" aria-label="menu">
+                <AppsIcon />
+            </IconButton>
             <IconButton edge="start" color="inherit" aria-label="menu" onClick={()=>{dispatch(toggleAppDrawer({}))}}>
                 <MenuIcon />
             </IconButton>
