@@ -2,7 +2,7 @@ import {Divider, Drawer} from "@material-ui/core";
 import {makeStyles} from '@material-ui/core/styles';
 import {useSelector, useDispatch} from "react-redux";
 import {AppDrawerMenuList} from "./AppDrawerMenuList";
-import {toggleAppDrawer} from "../../../redux/slices/NavigationSlice";
+import {toggleAppDrawer} from "../../../redux/slices/UiSlice";
 
 const drawerWidth = 240;
 
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const AppDrawer = () => {
-    const drawerState = useSelector(state => state.navigation.drawer)
+    const drawerState = useSelector(state => state.ui.navigation.drawer)
     const dispatch = useDispatch()
     const classes = useStyles();
     //

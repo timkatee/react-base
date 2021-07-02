@@ -9,8 +9,8 @@ export const meerkatAPI = createApi({
     endpoints: (builder) => ({
         getDetectedIssues: builder.query({
             query: (filters) => `detected_issue/read?start=${filters.start}&limit=${filters.limit}`,
-            transformResponse : (response)=> response.map(data=>({...data,id:data.issue_id}))
-        })
+            // transformResponse : (response)=> ({...response,...response.data.map(data=>({...data,id:data.issue_id}))})
+        }),
     })
 });
 

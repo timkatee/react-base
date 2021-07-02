@@ -1,12 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {setupListeners} from "@reduxjs/toolkit/query";
-import NavigationSlice from "./slices/NavigationSlice";
+import UiSlice from "./slices/UiSlice";
 import {meerkatAPI} from "../services/Main";
 
 
 export const store = configureStore({
     reducer : {
-        navigation:NavigationSlice,
+        ui:UiSlice,
         [meerkatAPI.reducerPath] : meerkatAPI.reducer
     },
     middleware:(getDefaultMiddleware)=>

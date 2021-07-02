@@ -1,37 +1,22 @@
 import * as React from 'react';
 import {DataGrid} from '@material-ui/data-grid';
-import {useState} from "react";
 //
-const columns = [
-    {field: 'date_created', headerName:"Date Created", flex:1},
-    // {field: 'issue_id', headerName:"Issue Id", flex:1},
-    {field: 'master_job', headerName:"Master JobID", flex:1},
-    {field: 'rmop_name', headerName:"RMOP Name", flex:2},
-    {field: 'issue_category', headerName:"Issue Category", flex:1},
-    {field: 'issue_reason', headerName:"Issue Reason", flex:1},
-    {field: 'issue_level', headerName:"Issue Level", flex:1}
-]
+
 //
-const DetectedIssuesView = ({data}) => {
-    // const {page, setPage} = useState(0)
-    // const {rows, setRows} = useState([])
-    //
-    // setRows(data)
-    //
-    const handlePageChange = (params) => {
-        console.log(params)
-    }
-    // console.log(data)
+const DetectedIssuesView = ({data, dataProperties, columns, onTableChanges, tableLastState}) => {
     return (
         <DataGrid
+            loading={tableLastState.loading}
+            page={tableLastState.pageNumber}
             rows={data}
             columns={columns}
-            pageSize={10}
+            pageSize={tableLastState.dataQueryLimit}
+            rowCount={dataProperties.count}
             // checkboxSelection
             disableSelectionOnClick
             autoHeight
-            // autoPageSize
-            onPageChange={(params)=> handlePageChange(params)}
+            pagination
+            onPageChange={(params)=> onTableChanges(params)}
             paginationMode='server'
         />
     )

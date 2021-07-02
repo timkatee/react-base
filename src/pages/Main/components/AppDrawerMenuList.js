@@ -1,7 +1,7 @@
 import {List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
 import {Link} from "react-router-dom";
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
-import {toggleAppDrawer} from "redux/slices/NavigationSlice";
+import {toggleAppDrawer, updateNavigatedToPageName} from "redux/slices/UiSlice";
 import {useDispatch} from "react-redux";
 
 const menuList = [
@@ -20,7 +20,8 @@ export const AppDrawerMenuList = () => {
         >
             <List>
                 {menuList.map((menu, index) => (
-                    <Link key={menu.link} to={menu.link}>
+                    <Link key={menu.link} to={menu.link}
+                          onClick={() => dispatch(updateNavigatedToPageName({name: menu.name}))}>
                         <ListItem button key={menu.name}>
                             <ListItemIcon>{menu.icon}</ListItemIcon>
                             <ListItemText primary={menu.name}/>
