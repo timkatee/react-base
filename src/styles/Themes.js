@@ -1,5 +1,4 @@
 import {createMuiTheme} from "@material-ui/core";
-import {red} from "@material-ui/core/colors";
 // MUI Theme
 // import theme from "styles/muiTheme";
 export const rcpTheme = createMuiTheme({
@@ -17,4 +16,8 @@ export const rcpTheme = createMuiTheme({
             contrastText:'#fff'
         },
     },
+    typography:{
+        fontFamily:"Rakuten Sans",
+        fontSize:16
+    }
 });

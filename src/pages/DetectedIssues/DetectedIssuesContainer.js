@@ -14,7 +14,7 @@ const columns = [
 //
 export function DetectedIssuesContainer(){
     const [pageNumber, setPageNumber] = useState(0);
-    const [dataQueryLimit, setDataQueryLimit] = useState(10);
+    const [dataQueryLimit, setDataQueryLimit] = useState(25);
     const [startQueryNumber, setStartQueryNumber] = useState(0);
     //
     const {data, error, isLoading} = useGetDetectedIssuesQuery({start:startQueryNumber,limit:dataQueryLimit})

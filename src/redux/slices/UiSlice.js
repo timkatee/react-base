@@ -8,7 +8,7 @@ const uiSlice = createSlice(
                 drawer: {
                     open: false
                 },
-                navigatedToPageName: ''
+                navigatedToPageName: 'Home'
             }
         },
         reducers:{
